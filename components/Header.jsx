@@ -14,10 +14,10 @@ const Header = () => {
             
             <View className='flex-1'>
                 <Text className='font-bold text-gray-400 text-xs'>Deliver Now!</Text>
-                <Text className='font-bold text-xl'>
-                    Current Location
+                <View className=' flex-row items-center '>
+                    <Text className='text-lg font-bold'>Current Location</Text>
                     <ChevronDownIcon color='#00CCBB' size={20} />
-                </Text>
+                </View>
             </View>
 
             <UserIcon color='#00CCBB' size={35} />

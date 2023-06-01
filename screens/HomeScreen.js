@@ -1,9 +1,10 @@
 import React, { useLayoutEffect } from 'react'
-import { View, Text, Image, TextInput } from 'react-native'
+import { View, Text, Image, TextInput, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native'
 import {UserIcon, ChevronDownIcon, MagnifyingGlassIcon, AdjustmentsHorizontalIcon, AdjustmentsVerticalIcon } from "react-native-heroicons/outline"
 import Header from '../components/Header';
+import Categories from '../components/Categories';
 const HomeScreen = () => {
   const navigation = useNavigation();
   useLayoutEffect(() => {
@@ -13,7 +14,6 @@ const HomeScreen = () => {
   },[])
   return (
     <SafeAreaView className='bg-white pt-5'>
-      <View className='text-red-500  '>
         <Header />
         {/* Search */}
         <View className='flex-row items-center space-x-2 pb-2 mx-4'>
@@ -27,8 +27,15 @@ const HomeScreen = () => {
           <AdjustmentsVerticalIcon color='#00CCBB' />
         </View>
 
-        
-      </View>
+        <ScrollView
+          contentContainerStyle={{
+            paddingBottom: 100,
+          }}
+          className='bg-gray-100 '>
+          {/* Categories */}
+          <Categories />
+          {/* Featured rows */}
+        </ScrollView>
     </SafeAreaView>
   )
 }
